@@ -3,7 +3,7 @@ const column2 = document.querySelector('.column-2')
 const addButton = document.querySelector('#add')
 const inputs = document.querySelectorAll('inputs')
 
-addButton.addEventListener('click', () => {
+let addButtonFunction = () => {
   let placementBox = document.createElement('div')
   placementBox.classList.add('placement-box')
   column1.appendChild(placementBox)
@@ -13,8 +13,10 @@ addButton.addEventListener('click', () => {
   input.setAttribute('placeholder', 'Enter item...')
   creationBox.classList.add('creation-box')
   creationBox.appendChild(input)
-  column2.appendChild(creationBox)
-})
+  column2.insertBefore(creationBox, addButton)
+}
+
+addButton.addEventListener('click', addButtonFunction)
 
 // inputs.addEventListener('keypress', e => {
 //   let key = e.which || e.keyCode;
