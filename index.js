@@ -23,26 +23,29 @@ let addButtonFunction = () => {
 let activateInputs = (inputs) => {
   inputs.forEach(input => {
     input.addEventListener('keypress', (e) => {
+      parentNode = input.parentNode
+      if (e.keyCode == 13) {
+        parentNode.innerText = input.value
+        parentNode.className += ' padding'
+      }
       input.parentNode.classList.add('active')
-      console.log(input)
-      console.log(inputs)
     })
   })
 }
 
-// let allowDrop = (e) => {
-//   e.preventDefault()
-// }
-//
-// let drag = (e) => {
-//   e.dataTransfer.setData('text', e.target.id)
-// }
-//
-// let drop = (e) => {
-//   e.preventDefault()
-//   let data = e.dataTransfer.getData('text')
-//
-// }
+let allowDrop = (e) => {
+  e.preventDefault()
+}
+
+let drag = (e) => {
+  e.dataTransfer.setData('text', e.target.id)
+}
+
+let drop = (e) => {
+  e.preventDefault()
+  let data = e.dataTransfer.getData('text')
+  e.target.appendChild(doccument.getElementById(data))
+}
 
 $('#add').on('click', addButtonFunction)
 

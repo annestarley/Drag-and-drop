@@ -15,14 +15,20 @@
 
 <body>
   <div class="column-1">
+    <div class="instructions">
+      <p>Drag or drop created items in the order you want them.</p>
+    </div>
     <div class="placement-box" ondrop="drop(e)" ondragover="allowDrop(e)">
     </div>
   </div>
   <div class="column-2">
+    <div class="instructions">
+      <p>Enter to save input. Click to add additional item.</p>
+    </div>
     <div class="creation-box" draggable="true" ondragstart="drag(e)">
       <input placeholder="Enter item..."></input>
     </div>
-    <button id="add">Add additional item</button>
+    <button id="add">+</button>
   </div>
 </body>
 

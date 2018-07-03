@@ -22,6 +22,7 @@ h1, p {
   width: 90%;
   margin-top: 2%;
   margin-bottom: 2%;
+  text-align: center;
 }
 
 .row:after {
@@ -40,15 +41,34 @@ h1, p {
   border-color: black;
 }
 
+.instructions {
+  height: 50px;
+}
+
 button {
   margin-top: 5px;
   padding: 10px;
   border-radius: 10%;
+  outline: none;
+}
+
+button:hover {
+  border: black 1px solid;
+  color: black;
+  padding: 13px;
+}
+
+button:active {
+  padding: 10px;
+}
+
+.padding {
+  padding-top: 10px;
 }
 
 /* FOOTER */
 footer {
-  padding-top: 20%;
+  padding-top: 50px;
 }
 
 footer p {
