@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans');
+
 * {
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1, p {
   text-align: center;
+  font-family: 'Indie Flower', cursive;
 }
 
 .column-1, .column-2 {
@@ -32,10 +36,14 @@ h1, p {
   padding: 15px;
 }
 
+.active {
+  border-color: black;
+}
+
 button {
   margin-top: 5px;
   padding: 10px;
-  
+  border-radius: 10%;
 }
 
 /* FOOTER */

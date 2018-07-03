@@ -1,7 +1,8 @@
 const column1 = document.querySelector('.column-1')
 const column2 = document.querySelector('.column-2')
 const addButton = document.querySelector('#add')
-const inputs = document.querySelectorAll('inputs')
+let inputs = document.querySelectorAll('input')
+
 
 let addButtonFunction = () => {
   let placementBox = document.createElement('div')
@@ -14,11 +15,35 @@ let addButtonFunction = () => {
   creationBox.classList.add('creation-box')
   creationBox.appendChild(input)
   column2.insertBefore(creationBox, addButton)
+  inputs = document.querySelectorAll('input')
+
+  activateInputs(inputs)
 }
 
-addButton.addEventListener('click', addButtonFunction)
+let activateInputs = (inputs) => {
+  inputs.forEach(input => {
+    input.addEventListener('keypress', (e) => {
+      input.parentNode.classList.add('active')
+      console.log(input)
+      console.log(inputs)
+    })
+  })
+}
 
-// inputs.addEventListener('keypress', e => {
-//   let key = e.which || e.keyCode;
-//   if (key === 13) console.log('enter');
-// })
+// let allowDrop = (e) => {
+//   e.preventDefault()
+// }
+//
+// let drag = (e) => {
+//   e.dataTransfer.setData('text', e.target.id)
+// }
+//
+// let drop = (e) => {
+//   e.preventDefault()
+//   let data = e.dataTransfer.getData('text')
+//
+// }
+
+$('#add').on('click', addButtonFunction)
+
+activateInputs(inputs)

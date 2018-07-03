@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Drag and Drop</title>
   <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script defer src="index.js"></script>
 </head>
 
@@ -14,11 +15,11 @@
 
 <body>
   <div class="column-1">
-    <div class="placement-box">
+    <div class="placement-box" ondrop="drop(e)" ondragover="allowDrop(e)">
     </div>
   </div>
   <div class="column-2">
-    <div class="creation-box">
+    <div class="creation-box" draggable="true" ondragstart="drag(e)">
       <input placeholder="Enter item..."></input>
     </div>
     <button id="add">Add additional item</button>
